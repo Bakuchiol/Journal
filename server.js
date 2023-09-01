@@ -18,6 +18,7 @@ app.use(require('./config/checkToken'));
 
 // ************************ API ROUTES **************
 app.use('/api/users', require('./routes/api/users'));
+// ************************ PROTECTED ROUTES **************
 // const ensureLoggedIn = require('./config/ensureLoggedIn')
 
 // catch all

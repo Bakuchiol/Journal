@@ -25,6 +25,11 @@ const create = async (req, res) => {
   }
 };
 
+// profile
+const checkAuth = (req, res, next) => {
+  return req.user ? next() : res.status(401).json({ msg: 'Not Authorized' })
+}
+
 /*-- Helper Functions --*/
 
 function createJWT(user) {
@@ -39,4 +44,5 @@ function createJWT(user) {
 module.exports = {
   create,
   login,
+  checkAuth,
 };

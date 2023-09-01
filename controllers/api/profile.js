@@ -1,5 +1,5 @@
-import { Profile } from '../../models/Profile'
 import { v2 as cloudinary } from 'cloudinary'
+const Profile = require('../../models/Profile');
 
 // find profiles ( attempt!! )
 const index = async(req,res) => {
@@ -10,18 +10,6 @@ const index = async(req,res) => {
         res.status(500).json(err)
     }
 }
-
-// *** cloudinary attempt ***
-// const addPhoto = async(req,res) => {
-//     const imageFile = req.files.photo.path
-//     const image = Profile.findById(req.params.id)
-//     image = cloudinary.uploader.upload(imageFile, {})
-//     try {
-        
-//     } catch (err) {
-//         res.status(500).json(err)
-//     }
-// }
 
 const addPhoto = async(req,res) => {
     try {
@@ -42,7 +30,6 @@ const addPhoto = async(req,res) => {
         res.status(500).json(err)
     }
 }
-
 
 module.exports = {
     index,
