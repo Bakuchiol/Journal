@@ -3,6 +3,24 @@ const Entry = require("../../models/Entry")
 const Profile = require("../../models/Profile")
 
 
+// create entry
+const create = async(req,res) => {
+    try {
+        req.body.author = req.user.profile
+        const entry = await Entry.create(req.body)
+        const profile = await Profile.findByIdAndUpdate(
+            req.user.profile,
+            {new : true }
+            )
+        entry.author = profile
+        res.status(201).json(entry) // 201 = created
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err)
+    }
+}
+
+// add image to entry
 const addPhoto = async (req, res) => {
   try {
     const imageFile = req.files.photo.path;
@@ -24,5 +42,6 @@ const addPhoto = async (req, res) => {
 };
 
 export {
-    addPhoto
+    addPhoto,
+    create
 }
