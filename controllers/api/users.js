@@ -30,7 +30,6 @@ const create = async (req, res) => {
 const signup = async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
-
     if (user) {
       throw new Error('Account already exists');
     } else {
