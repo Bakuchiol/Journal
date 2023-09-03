@@ -17,8 +17,8 @@ export async function login(credentials){
 
 // users-service.js
 export function getToken() {
-  const token = localStorage.getItem("token"); // goes to localstorage and look at token, if empty return null
-  if (!token) return null; // if no token, function over
+  const token = localStorage.getItem("token");
+  if (!token) return null;
 
   const payload = JSON.parse(atob(token.split(".")[1]));
   if (payload.exp < Date.now() / 1000) {
@@ -37,7 +37,7 @@ export function logOut(){
   localStorage.removeItem('token')
 }
 
-export async function checkToken(){
-  alert('clicked');
-  return usersAPI.checkToken().then(dateStr => new Date(dateStr))
-}
+// export async function checkToken(){
+//   alert('clicked');
+//   return usersAPI.checkToken().then(dateStr => new Date(dateStr))
+// }

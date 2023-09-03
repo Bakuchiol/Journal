@@ -7,9 +7,9 @@ const bcrypt = require("bcrypt");
 const login = async (req, res) => {
   try {
     const user = await User.findOne({ email: req.body.email });
-    if (!user) throw new Error();
+    if (!user) throw new Error('Account already exists');
     const match = await bcrypt.compare(req.body.password, user.password);
-    if (!match) throw new Error();
+    if (!match) throw new Error('Username or Password did not match.');
     res.status(200).json(createJWT(user));
   } catch (err) {
     res.status(400).json({ msg: err.message, reason: "Bad Credentials" });

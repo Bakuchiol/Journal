@@ -3,8 +3,13 @@ const Schema = mongoose.Schema;
 
 const profileSchema = new Schema(
     {
-        name: String,
-        photo: String
+        name: {
+            type: String,
+            required: true
+        },
+        photo: {
+            type: String,
+        }
     },
     {
         timestamps: true,

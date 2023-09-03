@@ -1,4 +1,4 @@
-import * as tokenService from "./tokenService";
+import * as tokenService from "./users-service";
 
 const BASE_URL = "/api/users";
 
