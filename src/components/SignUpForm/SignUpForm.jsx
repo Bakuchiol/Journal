@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { signUp } from "../../utilities/users-service";
+import { signUp } from '../../utilities/users-service'
+import styles from './SignUpForm.module.css'
 
 export default function SignUpForm(props) {
   const [formData, setFormData] = useState({
@@ -36,18 +37,29 @@ export default function SignUpForm(props) {
     const disable = formData.password !== formData.confirm
 
   return (
-    <div>
+    <div className={styles.Wrapper}>
       {console.log(formData)}
       <div className="form-container">
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Name</label>
-          <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-          <label>Email</label>
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={formData.password} onChange={handleChange} required />
-          <label>Confirm</label>
-          <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
+          <div className='input'>
+            <label>Name</label>
+            <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+          </div>
+
+          <div className='input'>
+            <label>Email</label>
+            <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+          </div>
+          
+          <div className='input'>
+            <label>Password</label>
+            <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+          </div>
+
+          <div className='input'>
+            <label>Confirm</label>
+            <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
+          </div>
           <button type="submit" disabled={disable}>SIGN UP</button>
         </form>
       </div>

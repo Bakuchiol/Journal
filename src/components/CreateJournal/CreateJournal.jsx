@@ -1,6 +1,9 @@
+// import { useState } from "react"
 
+export default function CreateJournal(props) {
 
-export default function CreateJournal() {
+    // const [journal, setJournal] = useState=({})
+
     return (
         <div>
             <form autoComplete="off">

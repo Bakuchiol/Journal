@@ -3,29 +3,40 @@ import styles from './AuthPage.module.css';
 import LoginForm from '../../components/LoginForm/LoginForm';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import Landing from '../../components/Landing/Landing';
+import Footer from '../../components/Footer/Footer'
 
 export default function AuthPage({ setUser }) {
   const [showLogin, setShowLogin] = useState(true);
 
   return (
     <main className={styles.AuthPage}>
-      <div className={styles.flex}>
-        <h3 onClick={() => setShowLogin(!showLogin)}>
-          {showLogin ? 'SIGN UP' : 'LOG IN'}
-        </h3>
-      </div>
       {showLogin ? (
+        <div className={styles.MainWrap}>
           <div>
-            <a href="/login">is this log in?</a>
-            <LoginForm setUser={setUser} />
-            <Landing/>
+            <Landing />
           </div>
+          <div>
+            <LoginForm setUser={setUser} />
+            <div className={styles.subTitle}>
+              <p onClick={() => setShowLogin(!showLogin)}>
+                {showLogin ? "Don't have an account? SIGN UP" : 'Already have an account? LOG IN'}
+              </p>
+            </div>
+          </div>
+        </div>
         ) : (
             <>
-            <a href="/login">is this log in?</a>
-            <SignUpForm setUser={setUser} />
+              <SignUpForm setUser={setUser} />
+              <div>
+                <p onClick={() => setShowLogin(!showLogin)}>
+                  {showLogin ? "Don't have an account? SIGN UP" : 'Already have an account? LOG IN'}
+                </p>
+              </div>
             </>
         )}
+          <div>
+            <Footer />
+          </div>
     </main>
   );
 }
