@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import * as userService from '../../utilities/users-service'
-import MainPage from "../../pages/MainPage/MainPage";
+import styles from './NavBar.module.css'
 
 export default function NavBar({user,setUser}) {
     const handleLogOut = () => {
@@ -8,7 +8,7 @@ export default function NavBar({user,setUser}) {
         setUser(null)
     }
     return(
-        <div>
+        <div className={styles.NavBarWrapper}>
         <nav>
             <Link to="" onClick={handleLogOut}>
                 Log Out
