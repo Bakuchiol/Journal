@@ -57,6 +57,7 @@ export {
     newEntry,
     oneEntry,
     editEntry,
+    deleteEntry
 }
 
 // // create entry
