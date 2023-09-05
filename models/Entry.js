@@ -2,20 +2,31 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const categorySchema = new Schema(
+  // {
+  //   name: {
+  //     type: String,
+  //     required: true
+  //   },
+  //   // include ? ?
+  //   img: {
+  //     type: String,
+  //     required: true,
+  //   },
+  //   sortOrder: Number,
+  // },
+  // {
+  //   timestamps: true,
+  // }
+
   {
-    name: {
+    title:{
       type: String,
       required: true
     },
-    // include ? ?
-    img: {
+    content: {
       type: String,
-      required: true,
-    },
-    sortOrder: Number,
-  },
-  {
-    timestamps: true,
+      required: true
+    }
   }
 );
 

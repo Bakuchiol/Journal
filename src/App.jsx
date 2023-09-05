@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom'
 import { getUser } from './utilities/users-service';
 import AuthPage from './pages/AuthPage/AuthPage'
 import MainPage from './pages/MainPage/MainPage';
@@ -9,6 +9,13 @@ import './App.css';
 function App() {
   const [user, setUser] = useState(getUser())
   const [entry, setEntry] = useState([])
+  const navigate = useNavigate()
+
+  // const handleAddPost = async (postData, photoData) => {
+  //   const newPost = await postService.create(postData, photoData)
+  //   setEntry([newPost, ...entry])
+  //   navigate('/posts')
+  // }
 
   return (
     <main className="App">

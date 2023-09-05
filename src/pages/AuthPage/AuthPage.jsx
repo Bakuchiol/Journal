@@ -25,14 +25,19 @@ export default function AuthPage({ setUser }) {
           </div>
         </div>
         ) : (
-            <>
-              <SignUpForm setUser={setUser} />
+          <div className={styles.MainWrap}>
               <div>
-                <p onClick={() => setShowLogin(!showLogin)}>
-                  {showLogin ? "Don't have an account? SIGN UP" : 'Already have an account? LOG IN'}
-                </p>
+                <Landing />
               </div>
-            </>
+              <div>
+                <SignUpForm setUser={setUser} />
+                <div className={styles.subTitle}>
+                  <p onClick={() => setShowLogin(!showLogin)}>
+                    {showLogin ? "Don't have an account? SIGN UP" : 'Already have an account? LOG IN'}
+                  </p>
+                </div>
+              </div>
+          </div>
         )}
           <div>
             <Footer />
