@@ -1,10 +1,63 @@
+const Entry = require("../../models/Entry")
+
+// get all entries
+const allEntries = async(req, res) => {
+    try {
+        const getAllEntries = await Entry.find({})
+        res.status(200).json(getAllEntries)
+    } catch (err) {
+        res.status(400).json({ msg: err.message })
+    }
+}
+
+// get by id
+const oneEntry = async(req,res) => {
+    try {
+        const id = req.params.id
+        const getOneEntry = await Entry.findOne({ "_id": id })
+        res.status(200).json(getOneEntry)
+
+    } catch (err) {
+        res.status(400).json({ msg: err.message })
+    }
+}
+
+// create new entry
+const newEntry = async(req, res) => {
+    try {
+        const entry = await Entry.create(req.body)
+        res.json(entry)
+    } catch (err) {
+        res.status(400).json({ msg: err.message })
+    }
+}
+
+// edit one
+const editEntry = async(req, res) => {
+    try {
+        const editOne = await Entry.findByIdAndUpdate(req.params.id,req.body)
+        res.status(200).json(editOne)
+    } catch (err) {
+        res.status(400).json({ msg: err.message })
+    }
+}
 
 
+const deleteEntry = async(req,res) => {
+    try {
+        const deleteOne = await Entry.findByIdAndDelete(req.body.id)
+        res.json(deleteOne)
+    } catch (err) {
+        res.status(400).json({msg:err.message})
+    }
+}
 
-// import { v2 as cloudinary } from "cloudinary";
-// const Entry = require("../../models/Entry")
-// const Profile = require("../../models/Profile")
-
+export {
+    allEntries,
+    newEntry,
+    oneEntry,
+    editEntry,
+}
 
 // // create entry
 // const create = async(req,res) => {
@@ -44,7 +97,3 @@
 //   }
 // };
 
-// export {
-//     addPhoto,
-//     create
-// }
