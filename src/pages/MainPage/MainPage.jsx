@@ -1,5 +1,6 @@
 import NewEntry from '../../components/NewEntry/NewEntry'
 
+
 export default function MainPage() {
     return (
         <div>
