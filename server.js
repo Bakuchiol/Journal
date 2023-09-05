@@ -17,11 +17,11 @@ app.use(express.static(path.join(__dirname, "build")));
 app.use(require('./config/checkToken'));
 
 // ************************ PROTECTED ROUTES **************
-const ensureLoggedIn = require('./config/ensureLoggedIn')
+// const ensureLoggedIn = require('./config/ensureLoggedIn')
 
 // ************************ API ROUTES **************
-app.use('/api/users', ensureLoggedIn, require('./routes/api/users'));
-app.use('/api/journal', ensureLoggedIn, require('./routes/api/entry'))
+app.use('/api/users', require('./routes/api/users'));
+app.use('/api/journal', require('./routes/api/entry'))
 
 
 // catch all

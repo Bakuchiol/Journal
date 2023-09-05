@@ -1,4 +1,5 @@
 .Wrapper {
     border: solid orange;
+    height: 60vh;
     /* display: flex; */
 }
