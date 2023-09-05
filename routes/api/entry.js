@@ -7,3 +7,5 @@ router.get('/entry/:id', entryCtrl.oneEntry)
 router.post('/new', entryCtrl.newEntry)
 router.put('/edit/:id', entryCtrl.editEntry)
 router.delete('/delete/:id', entryCtrl.deleteEntry)
+
+module.exports = router

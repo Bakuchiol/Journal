@@ -2,31 +2,26 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const categorySchema = new Schema(
-  // {
-  //   name: {
-  //     type: String,
-  //     required: true
-  //   },
-  //   // include ? ?
-  //   img: {
-  //     type: String,
-  //     required: true,
-  //   },
-  //   sortOrder: Number,
-  // },
-  // {
-  //   timestamps: true,
-  // }
-
   {
+    date: {
+      type: Date,
+      required: true,
+      default: Date.now
+    },
     title:{
       type: String,
       required: true
     },
     content: {
       type: String,
-      required: true
+      required: true,
     },
+    user_id: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }
+  },{
+    collection: 'entries',
     timestamps: true
   }
 );

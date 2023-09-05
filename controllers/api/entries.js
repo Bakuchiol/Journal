@@ -52,7 +52,7 @@ const deleteEntry = async(req,res) => {
     }
 }
 
-export {
+module.exports = {
     allEntries,
     newEntry,
     oneEntry,

@@ -21,7 +21,7 @@ const ensureLoggedIn = require('./config/ensureLoggedIn')
 
 // ************************ API ROUTES **************
 app.use('/api/users', ensureLoggedIn, require('./routes/api/users'));
-app.use('/api/journal', ensureLoggedIn, require('.routes/api/entry'))
+app.use('/api/journal', ensureLoggedIn, require('./routes/api/entry'))
 
 
 // catch all
