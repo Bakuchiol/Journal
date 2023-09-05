@@ -13,17 +13,30 @@ export default function NavBar({user,setUser}) {
     return(
         <div className={styles.NavBarWrapper}>
         <nav>
-            <span>Welcome, {user.name}</span>
-            &nbsp; | &nbsp;
-            <Link to="/">Home</Link>
-            &nbsp; | &nbsp;
-            <Link to="" onClick={handleLogOut}>
-                Log Out
-            </Link>
-            &nbsp; | &nbsp;
-            <Link to="/board"> Mood Board</Link>
-            &nbsp; | &nbsp;
-            <NavLink to="/board">Work?</NavLink>
+            {user ? (
+                <div>
+                    <span>Welcome, {user.name}</span>
+                    &nbsp; | &nbsp;
+                    <Link to="/">Home</Link>
+                    &nbsp; | &nbsp;
+                    <Link to="" onClick={handleLogOut}>
+                    Log Out
+                    </Link>
+                    &nbsp; | &nbsp;
+                    <Link to="/board"> Mood Board</Link>
+                    &nbsp; | &nbsp;
+                    <NavLink to="/board">Work?</NavLink>
+                </div>
+            ):(
+                <div className={styles.nav}>
+                    <div className={styles.flex}>
+                        <img src="https://images.vexels.com/media/users/3/244181/isolated/preview/1564942e5a77d8de588b8dae34140177-lavender-flowers-color-stroke.png" alt="lavender" className={styles.logo}/>
+                        <h4>Lavender Journal</h4>
+                    </div>
+                    <span>Hello</span>
+                </div>    
+            )
+            }
         </nav>
         </div>
     )

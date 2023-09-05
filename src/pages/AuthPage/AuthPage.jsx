@@ -4,12 +4,15 @@ import LoginForm from '../../components/LoginForm/LoginForm';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import Landing from '../../components/Landing/Landing';
 import Footer from '../../components/Footer/Footer'
+import NavBar from '../../components/NavBar/NavBar';
+import Overview from '../../components/Overview/Overview';
 
 export default function AuthPage({ setUser }) {
   const [showLogin, setShowLogin] = useState(true);
 
   return (
     <main className={styles.AuthPage}>
+      <NavBar />
       {showLogin ? (
         <div className={styles.MainWrap}>
           <div>
@@ -40,6 +43,7 @@ export default function AuthPage({ setUser }) {
           </div>
         )}
           <div>
+            <Overview />
             <Footer />
           </div>
     </main>

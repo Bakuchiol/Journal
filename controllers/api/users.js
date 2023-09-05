@@ -1,5 +1,4 @@
 const User = require("../../models/User");
-const Profile = require("../../models/Profile")
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
@@ -26,27 +25,6 @@ const create = async (req, res) => {
   }
 };
 
-// ** signing up **
-const signup = async (req, res) => {
-  try {
-    const user = await User.findOne({ email: req.body.email });
-    if (user) {
-      throw new Error('Account already exists');
-    } else {
-      const newProfile = await Profile.create(req.body);
-      req.body.profile = newProfile._id;
-      const user = await User.create(req.body);
-      const token = createJWT(user);
-      res.status(200).json({ token });
-    }
-  } catch (err) {
-    if (req.body.profile) {
-      await Profile.findByIdAndDelete(req.body.profile);
-    }
-    res.status(500).json({ err: err.message });
-  }
-};
-
 // profile
 const checkAuth = (req, res, next) => {
   return req.user ? next() : res.status(401).json({ msg: 'Not Authorized' })
@@ -65,5 +43,4 @@ module.exports = {
   create,
   login,
   checkAuth,
-  signup,
 };

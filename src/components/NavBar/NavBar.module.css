@@ -1,3 +1,21 @@
 .NavBarWrapper {
     border: solid blue;
+    height: 50px;
+}
+
+.logo {
+    height: 30px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px 0 20px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
