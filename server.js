@@ -16,15 +16,13 @@ app.use(favicon(path.join(__dirname, "build", "favicon.ico")));
 app.use(express.static(path.join(__dirname, "build")));
 app.use(require('./config/checkToken'));
 
-// ************************ API ROUTES **************
-app.use('/api/users', require('./routes/api/users'));
-
 // ************************ PROTECTED ROUTES **************
-// const ensureLoggedIn = require('./config/ensureLoggedIn')
-// const Uploadroute = require("./routes/api/upload")
+const ensureLoggedIn = require('./config/ensureLoggedIn')
 
-// app.use(Uploadroute)
-// app.use('/api/board', ensureLoggedIn, require)
+// ************************ API ROUTES **************
+app.use('/api/users', ensureLoggedIn, require('./routes/api/users'));
+app.use('/api/journal', ensureLoggedIn, require('.routes/api/entry'))
+
 
 // catch all
 app.get("/*", function (req, res) {
