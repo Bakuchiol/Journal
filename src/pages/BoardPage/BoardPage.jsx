@@ -4,6 +4,7 @@ export default function BoardPage() {
     return(
         <div>
             <h1>BOARD??</h1>
+            <Board />
         </div>
     )
 }

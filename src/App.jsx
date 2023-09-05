@@ -26,10 +26,10 @@ function App() {
             <Route path="/entries" element={<CreateEntry user={user} setUser={setUser} entry={entry} setEntry={setEntry}/>} />
             <Route exact path="/board" element={<Board photos={photos} user={user} setUser={setUser}/>} />
             <Route path="/board/mood" element={<BoardPage />} />
-            <Route path="*" element={<NoPage />} />
+            {/* <Route path="*" element={<NoPage />} /> */}
             {/* redirect to /orders/new if path in address bar hasn't matched a <Route> above */}
-            {/* <Route path="/*" element={<Navigate to="/" />} /> */}
-            <Route path="/*" element={<h3>Lavender Journal <Link to="/entries">Lavender Journal</Link></h3>} />
+            <Route path="/*" element={<Navigate to="/" />} />
+            {/* <Route path="/*" element={<h3>Lavender Journal <Link to="/entries">Lavender Journal</Link></h3>} /> */}
           </Routes>
         </>
         :

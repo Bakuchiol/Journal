@@ -16,7 +16,6 @@ export default function Board({photos, user, setUser}) {
                     )
                 })}
             </div> */}
-            <BoardPage />
         </div>
     )
 }
