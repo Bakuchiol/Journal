@@ -21,7 +21,9 @@ app.use('/api/users', require('./routes/api/users'));
 
 // ************************ PROTECTED ROUTES **************
 // const ensureLoggedIn = require('./config/ensureLoggedIn')
+const Uploadroute = require("./routes/api/upload")
 
+app.use(Uploadroute)
 
 // catch all
 app.get("/*", function (req, res) {
