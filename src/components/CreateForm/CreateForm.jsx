@@ -1,11 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import * as entryService from '../../utilities/entry-service';
+// import * as entryService from '../../utilities/entry-service';
+import axios from 'axios';
 
 
-function CreateForm({setAllServices}) {
-  const [createData, setCreateData] = useState("");
+function CreateForm() {
+  const [createData, setCreateData] = useState({});
 
   const navigate = useNavigate();
 
@@ -21,11 +22,13 @@ function CreateForm({setAllServices}) {
   try {
     const newCreateData = {...createData};
 
-    const user = await entryService.newEntry(newCreateData)
-    setAllServices(newCreateData)
-    // setAllServices(user)
+    const user = await axios.post("/api/entry/newEntry", newCreateData)
+    // entryService.newEntry(newCreateData)
+    // (user)
+    console.log(user)
    
   } catch(err) {
+    console.error(err)
     setCreateData({...createData, error: 'Unable to Store your Entry'})
   }
   navigate('/')

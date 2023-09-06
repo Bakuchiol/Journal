@@ -28,7 +28,8 @@ function UpdateJournal() {
   try {
     const newEditData = {...allEntries};
 
-    const res = await entryService.editEntry(newEditData)
+    const res = await axios.put("/api/entry/edit/:id", newEditData)
+    // entryService.editEntry(newEditData)
    console.log(res)
   } catch(err) {
     setAllEntries({...allEntries, error: 'Unable to Edit, Try Again Later'})
@@ -38,7 +39,7 @@ function UpdateJournal() {
 
 useEffect(() => {
    axios.get(
-    `/api/services/entry/${id}`
+    `/api/entry/edit/${id}`
   ).then(
     res => {setAllEntries(res.data);}
   );
@@ -49,10 +50,10 @@ useEffect(() => {
           <h1>Edit Journal Entry</h1>
            <form onSubmit={handleSubmit} action={`/update/submit/${id.id}?_method=PUT`} method='POST' >
               Title
-              <input type="text" name='serviceName' value={allEntries.serviceName}  onChange={handleChange} />
+              <input type="text" name='title' value={allEntries.serviceName}  onChange={handleChange} />
               <br />
               Content
-              <input type="text" name='serviceType' value={allEntries.serviceType} onChange={handleChange} />
+              <input type="text" name='content' value={allEntries.serviceType} onChange={handleChange} />
               <br />
               Like?
               { allEntries.like ?
@@ -64,7 +65,7 @@ useEffect(() => {
               }
               <br />    
               <input type="submit" name='' value="Edit Journal Entry" />
-              <button><Link to="/" >Back</Link></button>
+              <button><Link to="/">Back</Link></button>
           </form>       
       </div>
     )

@@ -12,8 +12,7 @@ code {
     monospace;
 } */
 .input {
-  border: solid lime;
+  /* border: solid lime; */
   display: flex;
   flex-direction: column;
-  width: 500px;
 }

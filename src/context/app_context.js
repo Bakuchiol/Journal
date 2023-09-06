@@ -10,14 +10,14 @@ const AppContextProvider = (props) => {
     const fetchAffirmations = async() => {
         const response = await axios.get('https://www.affirmations.dev/');
         let info = await response.data;
-        console.log('monster list', [info])
-        setUrl(info)
+        console.log('affirmation quotes', [info])
+        setUrl(info.affirmation)
     }
 
     const fetchQuotes = async() => {
         const response = await axios.get('https://api.quotable.io/quotes/random?tags=famous-quotes');
         let info = await response.data;
-        console.log('monster list', [info])
+        console.log('famous quotes', [info])
         setUrl(info)
     }
 

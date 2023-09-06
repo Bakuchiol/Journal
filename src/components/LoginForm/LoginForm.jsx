@@ -27,6 +27,11 @@ export default function LoginForm({ setUser }) {
 
   return (
     <div className={styles.Wrapper}>
+      <p>
+        Hey there, friend! 😊 <br />
+        Time to prioritize yourself today.
+      </p>
+      <br />
       <div className='form-container' onSubmit={handleSubmit}>
         <form autoComplete='off'>
           <div className='input'>

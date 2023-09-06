@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios"; // React Library Used to send and receive data from Backend
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
@@ -43,8 +43,6 @@ function All() {
             Create a New Entry
           </Link>
         </div>
-
-        {/* ------------ */}
         <div>
             {
                 allEntries ? allEntries.map((post,i) => {

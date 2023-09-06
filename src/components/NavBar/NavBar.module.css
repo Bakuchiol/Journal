@@ -1,23 +1,31 @@
 .NavBarWrapper {
-    border: solid blue;
     height: 80px;
     background-color: #e6e6fa;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 .logo {
-    height: 30px;
+    height: 60px;
 }
 .nav {
+    width: 1070px;
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
-    padding: 10px 20px 0 20px;
+    /* padding: 10px 20px 0 20px; */
 }
-
 .flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+.quote {
+    font-family: serif;
+    font-style: italic;
 }
