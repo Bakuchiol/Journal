@@ -58,7 +58,10 @@ useEffect(() => {
               <br />
               Content
               <input type="text" name='content' value={allEntries.content} onChange={handleChange} />
-              <br />    
+              <br />
+              Image
+              <input type="text" name='image' value={allEntries.image} onChange={handleChange} />
+              <br />  
               <input type="submit" name='' value="Edit Journal Entry" />
               <button><Link to="/">CLOSE</Link></button>
           </form>       

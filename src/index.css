@@ -33,3 +33,10 @@ button {
 button:hover {
   background-color: #fd657f
 }
+a {
+  text-decoration: none;
+  color: #000;
+}
+a:hover {
+  color: rgb(50, 184, 63);
+}

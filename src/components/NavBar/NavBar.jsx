@@ -1,25 +1,43 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
-import { AppContext } from '../../context/app_context'
+// import { AppContext } from '../../context/app_context'
 import * as userService from '../../utilities/users-service'
 import styles from './NavBar.module.css'
 // import { useContext, useEffect } from "react"
 
 export default function NavBar({user,setUser}) {
 
-    // let {fetchAffirmations} = useContext(AppContext)
-    // let { url } = useContext(AppContext)
+    const [scroll, setScroll] = useState(false);
+
+    // let {fetchAffirmations , url} = useContext(AppContext)
+    // let {fetchQuotes , url} = useContext(AppContext)
 
     // useEffect(() => {
     //     fetchAffirmations()
-    // }, [])
+    // }, [fetchAffirmations])
+
+    // useEffect(() => {
+    //     fetchQuotes()
+    // }, [fetchQuotes])
 
     const handleLogOut = () => {
         userService.logOut();
         setUser(null)
     }
 
+  // function scroll
+  const navScroll = () => {
+    if(window.scrollY >= 90) {
+      setScroll(true)
+    } else{
+      setScroll(false)
+    }
+  }
+
+  window.addEventListener('scroll', navScroll)
+
     return(
-        <div className={styles.NavBarWrapper}>
+        <div className={ scroll ? styles.navBarBg : styles.NavBarWrapper }>
         <nav>
             {user ? (
                 <div className={styles.nav}>
@@ -48,13 +66,18 @@ export default function NavBar({user,setUser}) {
                     <div>
                         <ul className={styles.list}>
                             <li className={styles.quote}>
-                                {/* {url} */}
+                                {/* {url ? 
+                                    (
+                                    // <p>{url.affirmation}</p>
+                                    <p>{url.content}</p>
+                                    ) : (
+                                    <p>Loading quote ...</p>
+                                    )
+                                } */}
                                 "Nourish Your Soul with Each Entry"
                             </li>
-                            &nbsp; | &nbsp;
-                            <li>About</li>
-                            &nbsp; | &nbsp;
-                            <li>Resources</li>
+                            {/* &nbsp; | &nbsp;
+                            <li>Link to log in?</li> */}
                         </ul>
                     </div>
                 </div>    

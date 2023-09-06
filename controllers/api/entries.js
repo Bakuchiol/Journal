@@ -3,12 +3,25 @@ const Entry = require("../../models/Entry")
 // get all entries
 const allEntries = async(req, res) => {
     try {
+        const { id } = req.params
         const getAllEntries = await Entry.find({})
         res.status(200).json(getAllEntries)
+
+        // attempt
+        // const filter = filterEntries(getAllEntries, id)
+        // res.send(filter)
+
     } catch (err) {
         res.status(400).json({ msg: err.message })
     }
 }
+
+// const filterEntries = (entry, id) => {
+//     const filter = entry.filter((each) => {
+//         return each.user._id === id
+//     })
+//     return filter
+// }
 
 // get by id
 const oneEntry = async(req,res) => {

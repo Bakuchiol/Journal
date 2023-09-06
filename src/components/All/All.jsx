@@ -61,6 +61,13 @@ function All() {
                         <div className={styles.test}>
                           <Link to={`/entry/${post._id}`}>
                             <div>
+                              { post.image ? (
+                                <img src={post.image} alt="memory"  className={styles.ImageSize}/>
+                              ):(
+                                ""
+                              )
+
+                              }
                                 <h3>{post.title}</h3>
                                 <p>{format(new Date(post.date), 'MMMM d, y')}</p>
                             </div>

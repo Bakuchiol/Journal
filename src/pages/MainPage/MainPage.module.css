@@ -1,3 +1,8 @@
+.Wrapper {
+    /* border:solid hotpink; */
+    padding-top: 100px;
+    text-align: center;
+}
 .flex {
     /* border: solid blue; */
     display: flex;

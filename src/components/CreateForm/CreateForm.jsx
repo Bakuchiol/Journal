@@ -42,23 +42,29 @@ const refreshPage = () => {
   return (
     <div className={styles.Wrapper}>
         <h1>Entry Journal</h1>
-         <form onSubmit={handleSubmit}>
+        <div>
+          <p>
+          Write down one kind or loving thing you did for yourself today. <br />
+          It could be big or small. <br/>
+          Celebrate your acts of self-care and self-love.
+          </p>
+        </div>
+        {/* TODO: */}
+         <form onSubmit={handleSubmit} className={styles.Form}>
             Title
             <br />
-            <input type="text" name='title' onChange={handleChange} />
-            <br />
-            Date
-            <br />
-            <input type="date" name='date'/>
+            <input type="text" name='title' onChange={handleChange} className={styles.input}/>
             <br />
             Content
             <br />
             <input type="text" name='content' onChange={handleChange} />
-            <br />    
+            <br />  
+            Image  
+            <br />
+            <input type="text" name='image' placeholder='image url' onChange={handleChange}/>
             {/* <input type="submit" name='' value="Create New Entry" onSubmit={handleSubmit}/> */}
-            {/* <br /> */}
-            {/* <Link to="/">Back</Link> */}
-            <button onClick={refreshPage}>refresh?</button>
+            <br />
+            <button onClick={refreshPage}>Create</button>
         </form>
     </div>
   )

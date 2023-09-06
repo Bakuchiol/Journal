@@ -1,11 +1,20 @@
 .NavBarWrapper {
     height: 80px;
     width: 100%;
-    background-color: #e6e6fa;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
 }
+.navBarBg {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: #e6e6fa;
+  }
 .logo {
     height: 60px;
 }

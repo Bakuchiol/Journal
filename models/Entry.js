@@ -16,6 +16,9 @@ const categorySchema = new Schema(
       type: String,
       required: true
     },
+    image :{
+      type: String,
+    },
     // only user can access own entries
     user_id: {
       type: Schema.Types.ObjectId,

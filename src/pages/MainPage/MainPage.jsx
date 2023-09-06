@@ -4,7 +4,7 @@ import styles from './MainPage.module.css'
 
 export default function MainPage() {
     return (
-        <div>
+        <div className={styles.Wrapper}>
             <h1>Welcome to Your Self-Care Sanctuary</h1>
             <br />
             <div className={styles.flex}>
