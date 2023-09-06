@@ -1,6 +1,16 @@
 .LandingWrapper {
-    border: solid fuchsia;
+    border: 1px solid #376430;
+    border-radius: 2.5px;
+    background-image: url('../../../public/images/the_artist\'s_garden_in_argenteuil_\(a_corner_of_the_garden_with_dahlias\)_1991.27.1.jpg');
+    background-position: 50% 50%;
     /* height: 100%; */
     width: 40vw;
-    height: 68vh;
+    height: 58vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quote {
+    margin-bottom: 50px;
+    font-size: 55px;
 }

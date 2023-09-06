@@ -21,9 +21,9 @@ export default function AuthPage({ setUser }) {
           <div>
             <LoginForm setUser={setUser} />
             <div className={styles.subTitle}>
-              <p onClick={() => setShowLogin(!showLogin)}>
+              <div onClick={() => setShowLogin(!showLogin)} className={styles.hover}>
                 {showLogin ? "Don't have an account? SIGN UP" : 'Already have an account? LOG IN'}
-              </p>
+              </div>
             </div>
           </div>
         </div>
@@ -35,7 +35,7 @@ export default function AuthPage({ setUser }) {
               <div>
                 <SignUpForm setUser={setUser} />
                 <div className={styles.subTitle}>
-                  <p onClick={() => setShowLogin(!showLogin)}>
+                  <p onClick={() => setShowLogin(!showLogin)} className={styles.hover}>
                     {showLogin ? "Don't have an account? SIGN UP" : 'Already have an account? LOG IN'}
                   </p>
                 </div>

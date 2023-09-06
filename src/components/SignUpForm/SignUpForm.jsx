@@ -44,7 +44,7 @@ export default function SignUpForm(props) {
           Dive into your journey of well-being.
         </p>
         <br/>
-      <div className="form-container">
+      <div className={styles.formContainer}>
         <form autoComplete="off" onSubmit={handleSubmit}>
           <div className='input'>
             <label>Name</label>
@@ -65,7 +65,10 @@ export default function SignUpForm(props) {
             <label>Confirm</label>
             <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
           </div>
-          <button type="submit" disabled={disable}>SIGN UP</button>
+          <br />
+          <div className={styles.formContainer}>
+            <button type="submit" disabled={disable}>SIGN UP</button>
+          </div>
         </form>
       </div>
       <p className="error-message">&nbsp;{formData.error}</p>

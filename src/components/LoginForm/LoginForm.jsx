@@ -32,7 +32,7 @@ export default function LoginForm({ setUser }) {
         Time to prioritize yourself today.
       </p>
       <br />
-      <div className='form-container' onSubmit={handleSubmit}>
+      <div className={styles.formContainer2} onSubmit={handleSubmit}>
         <form autoComplete='off'>
           <div className='input'>
             <label>Email</label>
@@ -55,7 +55,9 @@ export default function LoginForm({ setUser }) {
               required
             />
           </div>
-          <button type='submit'>LOG IN</button>
+          <div  className={styles.formContainer2}>
+            <button type='submit'>LOG IN</button>
+          </div>
         </form>
       </div>
       <p className='error-message'>&nbsp;{error}</p>

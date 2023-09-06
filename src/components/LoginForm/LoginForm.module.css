@@ -1,4 +1,14 @@
 .Wrapper {
-    border: solid green;
-    height: 60vh;
+    border: 1px #376430;
+    border-style: solid solid none none;
+    border-radius: 2.5px;
+    height: 53vh;
+    width: 30vw;
+    background-color: #e6e6fa;
+}
+.formContainer2 {
+    /* border: solid yellowgreen; */
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
 }

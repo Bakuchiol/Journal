@@ -2,16 +2,16 @@ import { Link } from "react-router-dom"
 import { AppContext } from '../../context/app_context'
 import * as userService from '../../utilities/users-service'
 import styles from './NavBar.module.css'
-import { useContext, useEffect } from "react"
+// import { useContext, useEffect } from "react"
 
 export default function NavBar({user,setUser}) {
 
-    let {fetchAffirmations} = useContext(AppContext)
-    let { url } = useContext(AppContext)
+    // let {fetchAffirmations} = useContext(AppContext)
+    // let { url } = useContext(AppContext)
 
-    useEffect(() => {
-        fetchAffirmations()
-    }, [])
+    // useEffect(() => {
+    //     fetchAffirmations()
+    // }, [])
 
     const handleLogOut = () => {
         userService.logOut();
@@ -48,7 +48,8 @@ export default function NavBar({user,setUser}) {
                     <div>
                         <ul className={styles.list}>
                             <li className={styles.quote}>
-                                {url}
+                                {/* {url} */}
+                                "Nourish Your Soul with Each Entry"
                             </li>
                             &nbsp; | &nbsp;
                             <li>About</li>

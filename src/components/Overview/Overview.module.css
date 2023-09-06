@@ -1,4 +1,5 @@
 .Wrapper{
-    border: solid #4C5A0D;
-    height: 300px;
+    /* border: solid #4C5A0D; */
+    height: 400px;
+    background-color: #e6e6fa;
 }

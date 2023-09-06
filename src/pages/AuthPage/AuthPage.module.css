@@ -16,15 +16,26 @@
 
 .flex {
   display: flex;
-  border: solid green;
+  /* border: solid green; */
 }
 
 .MainWrap {
-  border: solid purple;
+  /* border: solid purple; */
+  background-image: url('../../../public/images/morning_haze_1958.12.1.jpg');
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 68vh;
 }
 .subTitle {
-  border: solid violet;
+  border: 1px #376430;
+  border-style: none solid solid none;
+  background-color: #e6e6fa;
+  text-align: center;
+  padding: 10px;
+  cursor:pointer ;
+}
+
+.hover:hover {
+  color: #fd657f;
 }

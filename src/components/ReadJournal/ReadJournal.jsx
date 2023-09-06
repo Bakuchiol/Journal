@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 function ReadJournal() {
-  const [allEntries, setAllEntries] = useState("");
+  const [allEntries, setAllEntries] = useState({});
   const id = useParams().id;
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/api/journal/entry/${id}`)
+      .get(`http://localhost:3001/api/entry/${id}`)
       .then((res) => {
         setAllEntries(res.data);
       });
@@ -27,15 +27,12 @@ function ReadJournal() {
           <div>
             <strong>Content {allEntries.content}</strong>
           </div>
-          <div>
-            <strong>Like? {String(allEntries.like)}</strong>
-          </div>
           <button>
             <Link to={`/edit/${id}`}>EDIT</Link>
           </button>
           <br />
           <button>
-            <Link to="/"></Link>
+            <Link to="/">CLOSE</Link>
           </button>
         </div>
       </div>

@@ -28,7 +28,9 @@ function UpdateJournal() {
   try {
     const newEditData = {...allEntries};
 
-    const res = await axios.put("/api/entry/edit/:id", newEditData)
+    const res = await axios.put(`/api/entry/edit/${id}`, newEditData)
+    // const res = await axios.put("/api/entry/entry/edit/:id", newEditData)
+    // const res = await entryService.editEntry(newEditData)
     // entryService.editEntry(newEditData)
    console.log(res)
   } catch(err) {
@@ -50,22 +52,13 @@ useEffect(() => {
           <h1>Edit Journal Entry</h1>
            <form onSubmit={handleSubmit} action={`/update/submit/${id.id}?_method=PUT`} method='POST' >
               Title
-              <input type="text" name='title' value={allEntries.serviceName}  onChange={handleChange} />
+              <input type="text" name='title' value={allEntries.title}  onChange={handleChange} />
               <br />
               Content
-              <input type="text" name='content' value={allEntries.serviceType} onChange={handleChange} />
-              <br />
-              Like?
-              { allEntries.like ?
-                (
-                <input type="checkbox" name='like' defaultValue={'True'} onChange={handleChange} />
-                ):(
-                <input type="checkbox" name='like' value={'False'} onChange={handleChange} />
-                )
-              }
+              <input type="text" name='content' value={allEntries.content} onChange={handleChange} />
               <br />    
               <input type="submit" name='' value="Edit Journal Entry" />
-              <button><Link to="/">Back</Link></button>
+              <button><Link to="/">CLOSE</Link></button>
           </form>       
       </div>
     )

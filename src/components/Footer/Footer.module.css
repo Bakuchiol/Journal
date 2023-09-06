@@ -1,16 +1,30 @@
 .FooterWrapper {
-    border: solid lime;
-    height: 200px;
-    background-color: #e6e6fa;
-    background-image: url('https://cdn-icons-png.flaticon.com/512/7194/7194128.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right;
+    /* border: solid lime; */
+    height: 250px;
+    background-image: url('../../../public/images/morning_haze_1958.12.1.jpg');
+    background-position: 40% 30%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-
+.logo {
+    height: 250px;
+}
+.border {
+    height: 130px;
+}
+.github {
+    height: 20px;
+}
 .footerText {
-    border: solid blue;
-    width: 700px;
+    /* border: solid blue; */
+    width: 1000px;
+    padding: 10px;
     margin-left: 60px;
+}
+.list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
 }
