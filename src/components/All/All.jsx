@@ -1,33 +1,39 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import styles from "./All.module.css"
+import { AppContext } from "../../context/app_context";
 
 function All() {
   const [allEntries, setAllEntries] = useState("");
   const [removeData, setRemoveData] = useState("");
   const navigate = useNavigate();
+  const {count, setCount} = useContext(AppContext)
 
-  const getAllServices = async () => {
+
+  const getAllEntries = async () => {
     const response = await axios.get(
       "/api/entry/journal"
+
     );
     setAllEntries(response.data);
     console.log(response.data);
   };
-
+  
   console.log("checking return, entries: ", allEntries); // SANITY CHECK!! so may errors 😭
   useEffect(() => {
-    getAllServices();
-  }, []);
+    // setCount(prev => prev + 1)
+    getAllEntries();
+  }, [count]);
 
   const handleDelete = async(id) => {
-    const confirmDelete = window.confirm("Confirm Delete");
+    const confirmDelete = window.confirm("Are you sure you'd like to delete this entry?");
     if (confirmDelete) {
       try {
         const res = await axios.delete(`/api/entry/delete/${id}`)
         setRemoveData(res.data)
+        console.log("delete: ", res.data);
         navigate("/")
       } catch (err) {
         console.error(err);
@@ -36,16 +42,16 @@ function All() {
   };
 
   return (
-    <div>
+    <div className={styles.Wrapper}>
       <h1>Journal Entries</h1>
       <div>
         <div>
           <Link to="/new">
-            Create a New Entry
+            Create a New  Journal Entry
           </Link>
         </div>
         <br />
-        <div>
+        <div className={styles.container}>
             {
                 allEntries ? allEntries.map((post,i) => {
                     return(
@@ -56,7 +62,7 @@ function All() {
                                 <h3>{post.title}</h3>
                             </div>
                           </Link>
-                            <div>
+                            <div className={styles.flex}>
                                 <button>
                                     <Link to={`/edit/${post._id}`}>EDIT</Link>
                                 </button>

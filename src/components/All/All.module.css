@@ -1,7 +1,15 @@
+.Wrapper {
+    border: solid blue;
+    width: 600px;
+}
 .Card {
     border: solid hotpink;
 }
 .flex {
-    border: solid greenyellow;
     display: flex;
+    
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
 }

@@ -1,5 +1,6 @@
 .NavBarWrapper {
     height: 80px;
+    width: 100%;
     background-color: #e6e6fa;
     display: flex;
     justify-content: center;

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import * as entryService from '../../utilities/entry-service';
+import { AppContext } from "../../context/app_context";
 
 function UpdateJournal() {
  
@@ -15,6 +16,7 @@ function UpdateJournal() {
   });
   const id = useParams().id;
   const navigate = useNavigate();
+  const {count, setCount} = useContext(AppContext)
 
   const handleChange = (e) => {
     setAllEntries({
@@ -40,12 +42,13 @@ function UpdateJournal() {
 }
 
 useEffect(() => {
-   axios.get(
-    `/api/entry/edit/${id}`
-  ).then(
-    res => {setAllEntries(res.data);}
+   axios.get(`/api/entry/edit/${id}`)
+   .then(
+    res => {setAllEntries(res.data)
+      // setCount(prev => prev + 1)
+    }
   );
-}, []);
+}, [count]);
   
     return (
       <div>

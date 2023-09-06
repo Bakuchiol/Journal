@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// import * as entryService from '../../utilities/entry-service';
 import axios from 'axios';
+
+import styles from './CreateForm.module.css'
 
 
 function CreateForm() {
@@ -34,8 +35,12 @@ function CreateForm() {
   navigate('/')
 }
 
+const refreshPage = () => {
+  window.location.reload();
+}
+
   return (
-    <div>
+    <div className={styles.Wrapper}>
         <h1>Entry Journal</h1>
          <form onSubmit={handleSubmit}>
             Title
@@ -46,9 +51,11 @@ function CreateForm() {
             <br />
             <input type="text" name='content' onChange={handleChange} />
             <br />    
-            <input type="submit" name='' value="Create New Entry" onSubmit={handleSubmit}/>
-            <Link to="/">Back</Link>
-        </form>       
+            {/* <input type="submit" name='' value="Create New Entry" onSubmit={handleSubmit}/> */}
+            {/* <br /> */}
+            {/* <Link to="/">Back</Link> */}
+            <button onClick={refreshPage}>refresh?</button>
+        </form>
     </div>
   )
 }

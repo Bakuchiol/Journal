@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { AppContext } from "../../context/app_context";
 
 function ReadJournal() {
-  const [allEntries, setAllEntries] = useState({});
+  const [allEntries, setAllEntries] = useState('');
   const id = useParams().id;
+  const {count, setCount} = useContext(AppContext)
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/api/entry/${id}`)
+      .get(`http://localhost:3001/api/entry/entry/${id}`)
       .then((res) => {
         setAllEntries(res.data);
+        // setCount(prev => prev + 1)
       });
-  }, []);
+  }, [count]);
 
   
   return (

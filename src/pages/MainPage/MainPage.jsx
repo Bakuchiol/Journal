@@ -1,4 +1,5 @@
 import All from '../../components/All/All'
+import CreateForm from '../../components/CreateForm/CreateForm'
 import styles from './MainPage.module.css'
 
 export default function MainPage() {
@@ -8,6 +9,7 @@ export default function MainPage() {
             <br />
             <div className={styles.flex}>
                 <All />
+                <CreateForm />
             </div>
             
         </div>

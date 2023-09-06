@@ -35,8 +35,8 @@ export default function NavBar({user,setUser}) {
                         <Link to="" onClick={handleLogOut}>
                         Log Out
                         </Link>
-                        &nbsp; | &nbsp;
-                        <Link to="/board"> Mood Board</Link>
+                        {/* &nbsp; | &nbsp; */}
+                        {/* <Link to="/board"> Mood Board</Link> */}
                     </div>
                 </div>
             ):(
