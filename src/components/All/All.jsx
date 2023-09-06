@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import styles from "./All.module.css"
 import { AppContext } from "../../context/app_context";
+import { Link } from "react-router-dom";
+import { format } from "date-fns";
+import axios from "axios";
+import styles from "./All.module.css"
 
 function All() {
   const [allEntries, setAllEntries] = useState("");
@@ -34,7 +35,8 @@ function All() {
         const res = await axios.delete(`/api/entry/delete/${id}`)
         setRemoveData(res.data)
         console.log("delete: ", res.data);
-        navigate("/")
+        // navigate("/")
+        window.location.reload();
       } catch (err) {
         console.error(err);
       }
@@ -56,16 +58,19 @@ function All() {
                 allEntries ? allEntries.map((post,i) => {
                     return(
                       <div key={i} className={styles.flex}>
-                        <div>
+                        <div className={styles.test}>
                           <Link to={`/entry/${post._id}`}>
-                            <div className={styles.flex}>
+                            <div>
                                 <h3>{post.title}</h3>
+                                <p>{format(new Date(post.date), 'MMMM d, y')}</p>
                             </div>
                           </Link>
                             <div className={styles.flex}>
-                                <button>
-                                    <Link to={`/edit/${post._id}`}>EDIT</Link>
-                                </button>
+                                    <Link to={`/edit/${post._id}`}>
+                                      <button>
+                                        EDIT
+                                      </button>
+                                    </Link>
                                 <button onClick={(e) => handleDelete(post._id)}>
                                     DELETE
                                 </button>

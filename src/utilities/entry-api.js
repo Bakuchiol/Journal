@@ -1,5 +1,5 @@
 import sendRequest from "./send-request";
-const BASE_URL = '/api/users';
+const BASE_URL = '/api/entry';
 
 export function journal(id){
     return sendRequest(`${BASE_URL}/journal`, 'GET', id)

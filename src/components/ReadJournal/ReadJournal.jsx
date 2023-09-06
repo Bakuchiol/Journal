@@ -28,6 +28,11 @@ function ReadJournal() {
             <strong>Title {allEntries.title}</strong>
           </div>
           <div>
+            <strong>
+            Date {allEntries.date}
+            </strong>
+          </div>
+          <div>
             <strong>Content {allEntries.content}</strong>
           </div>
           <button>

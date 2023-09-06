@@ -3,6 +3,11 @@ const Schema = mongoose.Schema;
 
 const categorySchema = new Schema(
   {
+    date: {
+      type: Date,
+      required: true,
+      default: Date.now // date entry is made
+    },
     title: {
       type: String,
       required: true
@@ -11,8 +16,10 @@ const categorySchema = new Schema(
       type: String,
       required: true
     },
-    like: {
-      Boolean
+    // only user can access own entries
+    user_id: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
     }
   }
   // {

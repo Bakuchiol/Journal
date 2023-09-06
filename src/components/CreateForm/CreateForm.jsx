@@ -47,6 +47,10 @@ const refreshPage = () => {
             <br />
             <input type="text" name='title' onChange={handleChange} />
             <br />
+            Date
+            <br />
+            <input type="date" name='date'/>
+            <br />
             Content
             <br />
             <input type="text" name='content' onChange={handleChange} />

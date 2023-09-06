@@ -34,6 +34,8 @@ const newEntry = async(req, res) => {
 // edit one
 const editEntry = async(req, res) => {
     try {
+        // const {id} = req.params.id
+        // const editOne = await Entry.findOneAndUpdate({id:id}.id,{...req.body})
         const editOne = await Entry.findByIdAndUpdate(req.params.id,req.body)
         res.status(200).json(editOne)
     } catch (err) {
@@ -44,7 +46,7 @@ const editEntry = async(req, res) => {
 
 const deleteEntry = async(req,res) => {
     try {
-        const deleteOne = await Entry.findByIdAndDelete(req.params.id)
+        const deleteOne = await Entry.findByIdAndDelete(req.id)
         res.json(deleteOne)
     } catch (err) {
         res.status(400).json({msg:err.message})

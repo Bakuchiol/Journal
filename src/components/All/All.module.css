@@ -1,15 +1,26 @@
 .Wrapper {
     border: solid blue;
     width: 600px;
+    height: 600px;
+    overflow-y: scroll;
 }
 .Card {
     border: solid hotpink;
 }
 .flex {
     display: flex;
-    
+}
+.flex2 {
+    display: flex;
+    justify-content: center;
 }
 .container {
+    border: solid red;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+}
+.test {
+    border: solid lime;
+    margin-top: 20px;
 }
