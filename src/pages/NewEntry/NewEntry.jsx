@@ -10,3 +10,5 @@ const NewEntry = (props) => {
         </div>
     )
 }
+
+export default NewEntry

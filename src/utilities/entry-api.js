@@ -5,8 +5,8 @@ export function journal(id){
     return sendRequest(`${BASE_URL}/journal`, 'GET', id)
 }
 
-export function create(entryData){
-    return sendRequest(`${BASE_URL}/new`, 'POST', entryData)
+export function newEntry(entryData){
+    return sendRequest(`${BASE_URL}/newEntry`, 'POST', entryData)
 }
 
 export function edit(id){

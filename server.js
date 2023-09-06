@@ -21,7 +21,7 @@ app.use(require('./config/checkToken'));
 
 // ************************ API ROUTES **************
 app.use('/api/users', require('./routes/api/users'));
-app.use('/api/journal', require('./routes/api/entry'))
+app.use('/api/entry', require('./routes/api/entry'))
 
 
 // catch all

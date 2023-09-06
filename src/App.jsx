@@ -4,15 +4,14 @@ import { getUser } from './utilities/users-service';
 import AuthPage from './pages/AuthPage/AuthPage'
 import MainPage from './pages/MainPage/MainPage';
 import NavBar from './components/NavBar/NavBar';
+import ReadJournal from './components/ReadJournal/ReadJournal';
+import UpdateJournal from './components/UpdateJournal/UpdateJournal';
+import All from './components/All/All';
+import CreateForm from './components/CreateForm/CreateForm';
 import './App.css';
-import Board from './components/Board/Board';
-import CreateEntry from './components/CreateEntry/CreateEntry';
-import BoardPage from './pages/BoardPage/BoardPage';
 
 function App() {
   const [user, setUser] = useState(getUser());
-  const [entry, setEntry] = useState([]);
-  const [photos, setPhotos] = useState([])
 
   return (
     <main className="App">
@@ -22,10 +21,13 @@ function App() {
           <NavBar user={user} setUser={setUser}/>
           <MainPage />
           <Routes>
-            <Route path="/entries" element={<CreateEntry user={user} setUser={setUser} entry={entry} setEntry={setEntry}/>} />
-            <Route exact path="/board" element={<Board photos={photos} setPhotos={setPhotos} user={user} setUser={setUser}/>} />
-            <Route path="/board/mood" element={<BoardPage />} />
-            {/* redirect to /orders/new if path in address bar hasn't matched a <Route> above */}
+            {/* <Route path="/" element={<All />} /> */}
+            <Route path="/new" element={<CreateForm />}/>
+            <Route path="/entry/:id" element={<ReadJournal />} />
+            <Route path="/edit/:id" element={<UpdateJournal />} />
+            {/* paths idk */}
+            {/* <Route exact path="/board" element={<Board photos={photos} setPhotos={setPhotos} user={user} setUser={setUser}/>} /> */}
+            {/* <Route path="/board/mood" element={<BoardPage />} /> */}
             <Route path="/*" element={<Navigate to="/" />} />
           </Routes>
         </>
