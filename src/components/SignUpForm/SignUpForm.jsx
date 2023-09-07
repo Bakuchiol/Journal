@@ -38,7 +38,6 @@ export default function SignUpForm(props) {
 
   return (
     <div className={styles.Wrapper}>
-      {console.log(formData)}
       <div className={styles.space}>
         <p>
           Hello, dear friend! 🌸 <br />
