@@ -1,11 +1,28 @@
 
-# Journal
+# MERN CRUD FINAL PROJECT - PER SCHOLAS
+---------------------------------------
+---------------------------------------
+## Lavender Journal
+###### Deployed App: [Lavender Journal](https://lavender-5ryg.onrender.com)
+-------------------
+<img alt='project' src='./public/images/Landing.png'>
+<p>
+     The "Lavender Journal" is a beautifully designed self-care and gratitude journal that embraces the calming and soothing qualities associated with the scent of lavender. <br />
+     This journal is more than just a diary; it's your daily companion on a journey to improved well-being and mindfulness.
+</p>
 
+##### [Figma Documentation](https://www.figma.com/file/iSIVMasiwLn42Cf8AQHwz6/Lavender-Journal?type=whiteboard&node-id=3%3A582&t=P9L3F9C3SUyXtAFf-1)
 
-## Images 
+#### Images
+<img width= 700px alt='project' src='./public/images/Home.png'>
+<img width= 700px alt='project' src='./public/images/Read.png'>
+<img width= 700px alt='project' src='./public/images/Edit.png'>
 
-### `stuff`
+##### User Flow & ERD
+<p></p>
+<img width= 700px alt='project' src='./public/images/UserFlow.png'>
+<img width= 700px alt='project' src='./public/images/UserFlow.png'>
 
-### `more stuff`
+###### 
 
-## Dependencies
+#### Dependencies

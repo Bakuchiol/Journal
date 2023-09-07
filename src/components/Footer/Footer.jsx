@@ -24,7 +24,7 @@ export default function Footer() {
                         </a>
                     </li>
                     &nbsp; | &nbsp;
-                    <li>MOD 3 MERN CRUD</li>
+                    <li>Lavender Journal</li>
                     &nbsp; | &nbsp;
                     <li>
                         <a href="https://www.figma.com/file/DqwD7UkKCfZZ94OJpC739F/MERN-Journal?type=whiteboard&node-id=0%3A1&t=Fkl5hq2017aoNb8R-1" target='_blank' rel='noreferrer'>
