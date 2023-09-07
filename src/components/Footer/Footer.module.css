@@ -17,11 +17,15 @@
 .github {
     height: 20px;
 }
+.figma {
+    height: 30px;
+    margin: -5px 0 0 -8px;
+}
 .footerText {
     /* border: solid blue; */
     width: 1000px;
     padding: 10px;
-    margin-left: 60px;
+    margin-left: 200px;
 }
 .list {
     list-style: none;

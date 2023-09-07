@@ -1,6 +1,10 @@
 /* google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Italiana&family=Roboto+Condensed:wght@300;400;700&display=swap');
 
+/* font-family: 'Beth Ellen', cursive; */
+/* font-family: 'Italiana', serif; */
+/* font-family: 'Roboto Condensed', sans-serif; */
+
 * {
   padding: 0;
   margin: 0;
@@ -16,7 +20,9 @@
 input{
   height: 30px;
 }
-
+p {
+  font-family: 'Roboto Condensed', sans-serif;
+}
 button {
   width: 200px;
   height: 35px;
@@ -40,6 +46,10 @@ textarea {
   width: 300px;
   height: 100px;
 }
+ul {
+  list-style: none;
+  font-family: 'Roboto Condensed', sans-serif;
+}
 
 /* global flex */
 .flex {
@@ -61,4 +71,13 @@ textarea {
 }
 .test {
   border: solid blue
+}
+.margin {
+  margin-top: 20px;
+}
+.italiana {
+  font-family: 'Italiana', serif;
+}
+.beth {
+  font-family: 'Beth Ellen', cursive;
 }

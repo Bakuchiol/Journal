@@ -1,5 +1,10 @@
 .Wrapper{
     /* border: solid #4C5A0D; */
     height: 400px;
-    background-color: #e6e6fa;
+    background-color: #ecececf2;
+}
+.title {
+    padding-top: 50px;
+    text-align: center;
+    font-family: 'Beth Ellen', cursive;
 }

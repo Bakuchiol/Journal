@@ -5,7 +5,7 @@ export default function Footer() {
     return (
         <div className={styles.FooterWrapper}>
             <div className={styles.footerText}>
-                <h3>Get Started Today!</h3>
+                <h2 className='beth'>Get Started Today!</h2>
                 <p>
                     Join countless of others who have unlocked
                     the benefits of self-care journaling.
@@ -18,15 +18,19 @@ export default function Footer() {
                 <p>
                 </p>
                 <ul className={styles.list}>
-                    <li>MOD 3 MERN CRUD</li>
-                    &nbsp; | &nbsp;
                     <li>
                         <a href="https://github.com/Bakuchiol/Journal" target='_blank' rel='noreferrer'>
                             <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github" className={styles.github}/>
                         </a>
                     </li>
                     &nbsp; | &nbsp;
-                    <li>Images credited to their respective owners.</li>
+                    <li>MOD 3 MERN CRUD</li>
+                    &nbsp; | &nbsp;
+                    <li>
+                        <a href="https://www.figma.com/file/DqwD7UkKCfZZ94OJpC739F/MERN-Journal?type=whiteboard&node-id=0%3A1&t=Fkl5hq2017aoNb8R-1" target='_blank' rel='noreferrer'>
+                            <img src="https://logodownload.org/wp-content/uploads/2022/12/figma-logo-0.png" alt="figma" className={styles.figma}/>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div>
