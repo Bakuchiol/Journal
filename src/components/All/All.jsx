@@ -19,7 +19,6 @@ function All() {
   const getAllEntries = async () => {
     const response = await axios.get(
       "/api/entry/journal"
-
     );
     setAllEntries(response.data);
     console.log(response.data);
@@ -29,7 +28,7 @@ function All() {
   useEffect(() => {
     // setCount(prev => prev + 1)
     getAllEntries();
-  }, [count]);
+  }, []);
 
   const handleDelete = async(id) => {
     const confirmDelete = window.confirm("Are you sure you'd like to delete this entry?");

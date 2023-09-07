@@ -1,8 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { format } from "date-fns";
 import { useParams } from "react-router-dom";
 import { AppContext } from "../../context/app_context";
+
+import styles from './ReadJournal.module.css'
+import closeSVG from '../../icons/cancel.svg'
 
 function ReadJournal() {
   const [allEntries, setAllEntries] = useState('');
@@ -16,32 +20,33 @@ function ReadJournal() {
         setAllEntries(res.data);
         // setCount(prev => prev + 1)
       });
-  }, [count]);
+  }, []);
 
   
   return (
-    <div>
-      <div>
-        <h3>Journal Entry</h3>
-        <div>
+    <div className={styles.Wrapper}>
+      <div className={styles.Journal}>
+        <div className="closeButton">
+          <Link to="/">
+            <img src={closeSVG} alt="closeButton" />
+          </Link>
+        </div>
+        <div className={styles.container}>
           <div>
-            <strong>Title {allEntries.title}</strong>
+            <h2>{allEntries.title}</h2>
           </div>
           <div>
-            <strong>
-            Date {allEntries.date}
-            </strong>
+            {/* <p>{format(new Date(allEntries.date), 'MMMM d, y')}</p> */}
           </div>
-          <div>
-            <strong>Content {allEntries.content}</strong>
+          <div className={styles.entry}>
+            <p>{allEntries.content}</p>
           </div>
           <button>
             <Link to={`/edit/${id}`}>EDIT</Link>
           </button>
-          <br />
-          <button>
+          {/* <button>
             <Link to="/">CLOSE</Link>
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

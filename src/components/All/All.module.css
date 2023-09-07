@@ -22,11 +22,13 @@
     border: .5px solid #4C5A0D;
     border-radius: 8px;
     margin-top: 20px;
+    padding: 8px;
     width: 200px;
     background-color: #f5f5f5;
 }
 .ImageSize {
     height: 100px;
+    margin-bottom: 5px;
 }
 .Image {
     height: 100px;

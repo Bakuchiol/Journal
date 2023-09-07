@@ -1,0 +1,26 @@
+.Wrapper {
+    border: solid hotpink;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f8ffb5;
+}
+.Journal {
+    border-radius: 8px;
+    background-color: #ecececf2;
+    height: 500px;
+    width: 400px;
+    text-align: center;
+}
+.container {
+    /* border: solid green; */
+    height: 400px;
+}
+.entry {
+    margin: 20px 0;
+    padding: 18px;
+}
