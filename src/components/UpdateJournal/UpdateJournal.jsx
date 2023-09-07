@@ -37,7 +37,7 @@ function UpdateJournal() {
     // entryService.editEntry(newEditData)
    console.log("res from update", res)
    navigate('/')
-    window.location.reload();
+    // window.location.reload();
   } catch(err) {
     setAllEntries({...allEntries, error: 'Unable to Edit, Try Again Later'})
   }

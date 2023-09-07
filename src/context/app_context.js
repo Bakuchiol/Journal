@@ -7,6 +7,7 @@ const AppContextProvider = (props) => {
 
     const [url, setUrl] = useState(null);
     const [count, setCount] = useState(0)
+    const [deleteJournal, setDeleteJournal] = useState([])
 
     const fetchAffirmations = async() => {
         const response = await axios.get('https://www.affirmations.dev/');
@@ -28,7 +29,8 @@ const AppContextProvider = (props) => {
             url, setUrl,
             fetchAffirmations,
             fetchQuotes,
-            count, setCount
+            count, setCount,
+            deleteJournal, setDeleteJournal
         }}>
             {props.children}
         </AppContext.Provider>

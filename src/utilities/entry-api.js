@@ -1,4 +1,5 @@
 import sendRequest from "./send-request";
+// import axios from "axios";
 const BASE_URL = '/api/entry';
 
 export function journal(id){
@@ -13,6 +14,8 @@ export function edit(id){
     return sendRequest(`${BASE_URL}/edit/${id._id}`, 'PUT', id)
 }
 
-export function deleteOne(id){
+export async function deleteOne(id){
+    // const res = await axios.get(`/api/entry/delete/${id}`)
+    // return res
     return sendRequest(`${BASE_URL}/delete/${id._id}`, 'DELETE', id)
 }

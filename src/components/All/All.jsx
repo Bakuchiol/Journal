@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AppContext } from "../../context/app_context";
 import { Link } from "react-router-dom";
 import { format } from "date-fns";
+import * as EntryAPI from "../../utilities/entry-api"
 import axios from "axios";
 import styles from "./All.module.css"
 
@@ -13,7 +14,7 @@ function All() {
   const [allEntries, setAllEntries] = useState("");
   const [removeData, setRemoveData] = useState("");
   const navigate = useNavigate();
-  const {count, setCount} = useContext(AppContext)
+  const {count, setCount, deleteJournal, setDeleteJournal} = useContext(AppContext)
 
 
   const getAllEntries = async () => {
@@ -31,19 +32,29 @@ function All() {
   }, []);
 
   const handleDelete = async(id) => {
-    const confirmDelete = window.confirm("Are you sure you'd like to delete this entry?");
+    const confirmDelete = window.confirm("Delete this entry?");
     if (confirmDelete) {
       try {
         const res = await axios.delete(`/api/entry/delete/${id}`)
         setRemoveData(res.data)
         console.log("delete: ", res.data);
         // navigate("/")
-        window.location.reload();
+        // window.location.reload();
       } catch (err) {
         console.error(err);
       }
     }
   };
+
+  const deleteEntry = async(e, id)=>{
+    e.preventDefault()
+    setDeleteJournal(null)
+    try{
+        await EntryAPI.deleteOne(id)
+    }catch(err){
+        console.log('not deleted')
+    }
+}
 
   return (
     <div className={styles.Wrapper}>
@@ -93,10 +104,13 @@ function All() {
                                         EDIT
                                       </button> */}
                                     </Link>
+                                    {/* <div onClick={(e) => deleteEntry(e, post._id)}>
+                                      <img src={deleteSVG} alt="deleteIcon" className={styles.allButton} />
+                                    </div> */}
                                     <img src={deleteSVG} alt="deleteIcon" className={styles.allButton}
                                       onClick={(e) => handleDelete(post._id)}
                                     />
-                                {/* <button onClick={(e) => handleDelete(post._id)}>
+                                {/* <button onClick={(e) => handleDelete(e, post._id)}>
                                     DELETE
                                 </button> */}
                             </div>

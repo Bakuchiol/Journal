@@ -3,12 +3,6 @@ import { getToken } from './users-service';
 
 export default async function sendRequest(url, method = 'GET', payload = null) {
 
-  // const res = method === 'GET' ? await axios.get(url) : await axios.post(url, payload);
-
-  // if( res.status !== 200 ) throw new Error('Bad Request')
-
-  // return res.data
-
   const options = { method };
   if (payload) {
     options.headers = { 'Content-Type': 'application/json' };
