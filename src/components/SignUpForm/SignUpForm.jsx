@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { signUp } from '../../utilities/users-service'
 import styles from './SignUpForm.module.css'
 
-export default function SignUpForm(props) {
+export default function SignUpForm({setUser}) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,30 +11,54 @@ export default function SignUpForm(props) {
     error: ''
   });
 
-  const [error, setError] = useState('')
+  // const [error, setError] = useState('')
+
+  // const handleChange = (e) => {
+  //   setFormData({
+  //     ...formData,
+  //     [e.target.name]: e.target.value,
+  //   });
+  //   setError('')
+  // };
+
+  // const handleSubmit = async (e) =>  {
+  //   // Prevent form from being submitted to the server
+  //   e.preventDefault()
+  //   try {
+  //     const { confirm, ...data} = formData
+
+  //     const user = await signUp(data)
+  //     props.setUser(user)
+  //     console.log(user)
+  //   } catch(err) {
+  //     setError('Sign Up Failed')
+  //   }
+  // }
+  const disable = formData.password !== formData.confirm
 
   const handleChange = (e) => {
     setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
+        ...formData,
+        [e.target.name]: e.target.value,
     });
-    setError('')
-  };
+};
 
-  const handleSubmit = async (e) =>  {
+const handleSubmit = async (e) => {
     // Prevent form from being submitted to the server
     e.preventDefault()
     try {
-      const { confirm, ...data} = formData
+        const newFormData = { ...formData };
+        delete newFormData.error;
+        delete newFormData.confirm;
 
-      const user = await signUp(data)
-      props.setUser(user)
-      console.log(user)
-    } catch(err) {
-      setError('Sign Up Failed')
+        const user = await signUp(newFormData)
+        setUser(user)//update user state so page dont need manual refresh
+    } catch (err) {
+        // An error occurred
+        setFormData({ ...formData, error: 'Sign Up Failed - Try Again' })
     }
-  }
-    const disable = formData.password !== formData.confirm
+}
+
 
   return (
     <div className={styles.Wrapper}>
