@@ -1,29 +1,40 @@
 .Wrapper {
-    border: solid blue;
-    width: 600px;
-    height: 600px;
+    border: 1px solid #ecececf2;
+    border-radius: 8px;
+    background-color: #ecececf2;
+    width: 800px;
+    height: 100vh;
     overflow-y: scroll;
 }
-.Card {
-    border: solid hotpink;
-}
-.flex {
-    display: flex;
-}
-.flex2 {
-    display: flex;
-    justify-content: center;
+.overflow {
+    /* overflow-wrap: break-word; */
+    /* text-overflow: ellipsis; */
+    overflow-wrap: inherit;
 }
 .container {
-    border: solid red;
+    /* border: solid red; */
     display: flex;
     justify-content: center;
+    gap: 15px;
     flex-wrap: wrap;
 }
-.test {
-    border: solid lime;
+.Card {
+    border: .5px solid #4C5A0D;
+    border-radius: 8px;
     margin-top: 20px;
+    width: 200px;
+    background-color: #f5f5f5;
 }
 .ImageSize {
     height: 100px;
+}
+.Image {
+    height: 100px;
+    background-image: url('../../icons/sentiment_calm.svg');
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+.allButton {
+    height: 30px;
+    margin: 8px 0px;
 }

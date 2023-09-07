@@ -6,6 +6,9 @@ import { format } from "date-fns";
 import axios from "axios";
 import styles from "./All.module.css"
 
+import deleteSVG from '../../icons/delete.svg'
+import editSVG from '../../icons/edit.svg'
+
 function All() {
   const [allEntries, setAllEntries] = useState("");
   const [removeData, setRemoveData] = useState("");
@@ -45,42 +48,58 @@ function All() {
 
   return (
     <div className={styles.Wrapper}>
-      <h1>Journal Entries</h1>
+      {/* <h1>Journal Records</h1> */}
       <div>
-        <div>
+        {/* <div>
           <Link to="/new">
             Create a New  Journal Entry
           </Link>
-        </div>
+        </div> */}
         <br />
         <div className={styles.container}>
             {
                 allEntries ? allEntries.map((post,i) => {
                     return(
-                      <div key={i} className={styles.flex}>
-                        <div className={styles.test}>
+                      <div key={i} className='flex2'>
+                        <div className={styles.Card}>
                           <Link to={`/entry/${post._id}`}>
                             <div>
                               { post.image ? (
-                                <img src={post.image} alt="memory"  className={styles.ImageSize}/>
+                                <div className="flex">
+                                  <img src={post.image} alt="memory"  className={styles.ImageSize}/>
+                                </div>
                               ):(
-                                ""
+                                <div className={styles.Image}></div>
                               )
-
                               }
-                                <h3>{post.title}</h3>
-                                <p>{format(new Date(post.date), 'MMMM d, y')}</p>
+                              <div className="flex">
+                                <div>
+                                  <h2>{
+                                    post.title.length > 13 ?  post.title.substring(0, 15) + '...' : post.title
+                                    }
+                                    {/* {post.title.substring(0, 15)+ '...'} */}
+                                  </h2>
+                                  {/* <h2>{post.title.substring(0, 13)+ '...'}</h2> */}
+                                  <p>{format(new Date(post.date), 'MMMM d, y')}</p>
+                                </div>
+                              </div>
                             </div>
                           </Link>
-                            <div className={styles.flex}>
+                            <div className='flex3'>
                                     <Link to={`/edit/${post._id}`}>
-                                      <button>
+                                      <div>
+                                        <img src={editSVG} alt="deleteIcon" className={styles.allButton}/>
+                                      </div>
+                                      {/* <button className={styles.allButton}>
                                         EDIT
-                                      </button>
+                                      </button> */}
                                     </Link>
-                                <button onClick={(e) => handleDelete(post._id)}>
+                                    <img src={deleteSVG} alt="deleteIcon" className={styles.allButton}
+                                      onClick={(e) => handleDelete(post._id)}
+                                    />
+                                {/* <button onClick={(e) => handleDelete(post._id)}>
                                     DELETE
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                       </div>

@@ -1,11 +1,12 @@
 .Wrapper {
-    /* border:solid hotpink; */
     padding-top: 100px;
-    text-align: center;
 }
 .flex {
     /* border: solid blue; */
     display: flex;
     justify-content: space-between;
     padding: 0 100px;
+}
+.Header {
+    margin-left: 100px;
 }

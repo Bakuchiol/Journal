@@ -1,16 +1,11 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Italiana&family=Roboto+Condensed:wght@300;400;700&display=swap');
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 .input {
   /* border: solid lime; */
   width: 300px;
@@ -39,4 +34,25 @@ a {
 }
 a:hover {
   color: rgb(50, 184, 63);
+}
+textarea {
+  margin-top: 5px;
+}
+
+/* global flex */
+.flex {
+  display: flex;
+  justify-content: center;
+}
+.flex2 {
+  display: flex;
+}
+.flex3 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.closeButton {
+  text-align: right;
+  padding: 8px;
 }

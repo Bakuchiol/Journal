@@ -41,7 +41,8 @@ const refreshPage = () => {
 
   return (
     <div className={styles.Wrapper}>
-        <h1>Entry Journal</h1>
+        <h1>Log Your Moments</h1>
+        <br />
         <div>
           <p>
           Write down one kind or loving thing you did for yourself today. <br />
@@ -50,22 +51,33 @@ const refreshPage = () => {
           </p>
         </div>
         {/* TODO: */}
+        <div className='flex'>
          <form onSubmit={handleSubmit} className={styles.Form}>
-            Title
-            <br />
-            <input type="text" name='title' onChange={handleChange} className={styles.input}/>
-            <br />
-            Content
-            <br />
-            <input type="text" name='content' onChange={handleChange} />
-            <br />  
-            Image  
-            <br />
-            <input type="text" name='image' placeholder='image url' onChange={handleChange}/>
+          <div>
+            <div  className={styles.formContainer}>
+              Title
+              <br />
+              <input type="text" name='title' onChange={handleChange} className={styles.input}/>
+            </div>
+            <div  className={styles.formContainer}>
+              Thoughts and Musings
+              <br />
+              <textarea type="text" name='content' onChange={handleChange} className={styles.textBox}/>
+              {/* <input type="text" name='content' onChange={handleChange}  className={styles.input}/> */}
+            </div>
+            <div className={styles.formContainer}>
+              Snapshot of the Day  
+              <br />
+              <input type="text" name='image' placeholder='image url' onChange={handleChange} className={styles.input}/>
+            </div>
             {/* <input type="submit" name='' value="Create New Entry" onSubmit={handleSubmit}/> */}
             <br />
-            <button onClick={refreshPage}>Create</button>
+            <div className='flex'>
+              <button onClick={refreshPage} className={styles.createButton}>Create</button>
+            </div>
+          </div>
         </form>
+      </div>
     </div>
   )
 }

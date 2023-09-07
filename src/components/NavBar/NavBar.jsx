@@ -46,7 +46,7 @@ export default function NavBar({user,setUser}) {
                         <h3>Lavender Journal</h3>
                     </div>
                     <div>
-                        <span>Welcome, {user.name}</span>
+                        <span className={styles.span}>Welcome, {user.name}</span>
                         &nbsp; | &nbsp;
                         <Link to="/">Home</Link>
                         &nbsp; | &nbsp;
