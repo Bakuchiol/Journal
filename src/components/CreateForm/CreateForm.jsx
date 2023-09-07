@@ -41,7 +41,7 @@ const refreshPage = () => {
 
   return (
     <div className={styles.Wrapper}>
-        <h1>Log Your Moments</h1>
+        <h1 className='italiana'>Log Your Moments</h1>
         <br />
         <div>
           <p>

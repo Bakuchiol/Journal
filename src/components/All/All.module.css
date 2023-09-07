@@ -37,6 +37,7 @@
     background-position: 50%;
 }
 .allButton {
+    cursor: pointer;
     height: 30px;
-    margin: 8px 0px;
+    margin: 20px 0 5px 0px;
 }

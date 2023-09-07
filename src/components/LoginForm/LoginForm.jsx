@@ -27,10 +27,12 @@ export default function LoginForm({ setUser }) {
 
   return (
     <div className={styles.Wrapper}>
-      <p>
-        Hey there, friend! 😊 <br />
-        Time to prioritize yourself today.
-      </p>
+      <div className={styles.space}>
+        <p>
+          Hey there, friend! 😊 <br />
+          Time to prioritize yourself today.
+        </p>
+      </div>
       <br />
       <div className={styles.formContainer2} onSubmit={handleSubmit}>
         <form autoComplete='off'>

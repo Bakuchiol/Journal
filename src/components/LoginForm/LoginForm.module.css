@@ -10,5 +10,9 @@
     /* border: solid yellowgreen; */
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 30px;
+}
+.space {
+    padding-top: 30px;
+    font-size: 25px;
 }

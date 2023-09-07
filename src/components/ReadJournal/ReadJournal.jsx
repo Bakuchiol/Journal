@@ -33,7 +33,7 @@ function ReadJournal() {
         </div>
         <div className={styles.container}>
           <div>
-            <h2>{allEntries.title}</h2>
+            <h2 className="roboto">{allEntries.title}</h2>
           </div>
           <div>
             {/* <p>{format(new Date(allEntries.date), 'MMMM d, y')}</p> */}

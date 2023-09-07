@@ -73,7 +73,7 @@ function All() {
                               }
                               <div className="flex">
                                 <div>
-                                  <h2>{
+                                  <h2 className="roboto">{
                                     post.title.length > 13 ?  post.title.substring(0, 15) + '...' : post.title
                                     }
                                     {/* {post.title.substring(0, 15)+ '...'} */}

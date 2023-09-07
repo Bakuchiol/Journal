@@ -60,7 +60,7 @@ useEffect(() => {
               <img src={exit} alt="close icon" />
             </div>
           </Link>
-          <h1>Edit Journal Entry</h1>
+          <h1 className="italiana">Edit Journal Entry</h1>
           <div className="flex">
            <form onSubmit={handleSubmit} action={`/update/submit/${id.id}?_method=PUT`} method='POST' className={styles.Form}>
             <div className="flex">

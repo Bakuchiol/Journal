@@ -45,7 +45,7 @@ export default function NavBar({user,setUser}) {
                         <img src="https://cdn-icons-png.flaticon.com/512/7194/7194128.png" alt="lavender" className={styles.logo}/>
                         <h3>Lavender Journal</h3>
                     </div>
-                    <div>
+                    <div className="roboto">
                         <span className={styles.span}>Welcome, {user.name}</span>
                         &nbsp; | &nbsp;
                         <Link to="/">Home</Link>

@@ -39,10 +39,12 @@ export default function SignUpForm(props) {
   return (
     <div className={styles.Wrapper}>
       {console.log(formData)}
+      <div className={styles.space}>
         <p>
           Hello, dear friend! 🌸 <br />
           Dive into your journey of well-being.
         </p>
+      </div>
         <br/>
       <div className={styles.formContainer}>
         <form autoComplete="off" onSubmit={handleSubmit}>
