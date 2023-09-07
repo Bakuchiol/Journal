@@ -1,10 +1,7 @@
 
 # MERN CRUD FINAL PROJECT - PER SCHOLAS
----------------------------------------
----------------------------------------
 ## Lavender Journal
 ###### Deployed App: [Lavender Journal](https://lavender-5ryg.onrender.com)
--------------------
 <img alt='project' src='./public/images/Landing.png'>
 <p>
      The "Lavender Journal" is a beautifully designed self-care and gratitude journal that embraces the calming and soothing qualities associated with the scent of lavender. <br />
@@ -19,10 +16,32 @@
 <img width= 700px alt='project' src='./public/images/Edit.png'>
 
 ##### User Flow & ERD
-<p></p>
-<img width= 700px alt='project' src='./public/images/UserFlow.png'>
+<div>
+    <p>
+    A user can:
+    </p>
+    <ul>
+        <li>Sign in / Register an Account</li>
+        <li>Create a new journal entry</li>
+        <li>Read an entry</li>
+        <li>Update an entry</li>
+        <li>Delete an entry</li>
+    </ul>
+</div>
 <img width= 700px alt='project' src='./public/images/UserFlow.png'>
 
-###### 
+##### Tech Stack
+<ul>
+    <li>MongoDB</li>
+    <li>Express</li>
+    <li>React.js</li>
+    <li>Node.js</li>
+    <li>CSS</li>
+    <li></li>
+</ul>
 
-#### Dependencies
+##### ICEBOX 🧊
+-[] Mood/Vision Board with draggable components
+-[] Sort, Search, and Filter through Entries
+-[] Community - Able to share entries, shareable boards
+-[] Edit and Delete Account

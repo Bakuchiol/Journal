@@ -27,7 +27,7 @@ export default function Footer() {
                     <li>Lavender Journal</li>
                     &nbsp; | &nbsp;
                     <li>
-                        <a href="https://www.figma.com/file/DqwD7UkKCfZZ94OJpC739F/MERN-Journal?type=whiteboard&node-id=0%3A1&t=Fkl5hq2017aoNb8R-1" target='_blank' rel='noreferrer'>
+                        <a href="https://www.figma.com/file/iSIVMasiwLn42Cf8AQHwz6/Lavender-Journal?type=whiteboard&node-id=3%3A582&t=P9L3F9C3SUyXtAFf-1" target='_blank' rel='noreferrer'>
                             <img src="https://logodownload.org/wp-content/uploads/2022/12/figma-logo-0.png" alt="figma" className={styles.figma}/>
                         </a>
                     </li>
