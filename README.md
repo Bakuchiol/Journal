@@ -40,7 +40,7 @@
 </ul>
 
 ##### ICEBOX 🧊
--[ ] Mood/Vision Board with draggable components <br/>
--[ ] Sort, Search, and Filter through Entries <br />
--[ ] Community - Able to share entries, shareable boards <br />
--[ ] Edit and Delete Account <br />
+- [ ] Mood/Vision Board with draggable components <br/>
+- [ ] Sort, Search, and Filter through Entries <br />
+- [ ] Community - Able to share entries, shareable boards <br />
+- [ ] Edit and Delete Account <br />
