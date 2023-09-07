@@ -39,6 +39,9 @@
     <li>CSS</li>
 </ul>
 
+#### UNSOLVED PROBLEMS
+**App not rendering properly in deployed app 😭**
+
 ##### ICEBOX 🧊
 - [ ] Mood/Vision Board with draggable components <br/>
 - [ ] Sort, Search, and Filter through Entries <br />
