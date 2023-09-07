@@ -56,10 +56,9 @@ const editEntry = async(req, res) => {
     }
 }
 
-
 const deleteEntry = async(req,res) => {
     try {
-        const deleteOne = await Entry.findByIdAndDelete(req)
+        const deleteOne = await Entry.findByIdAndDelete(req.params.id)
         res.json(deleteOne)
     } catch (err) {
         res.status(400).json({msg:err.message})

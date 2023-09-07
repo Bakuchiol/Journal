@@ -39,22 +39,22 @@ function All() {
         setRemoveData(res.data)
         console.log("delete: ", res.data);
         // navigate("/")
-        // window.location.reload();
+        window.location.reload();
       } catch (err) {
         console.error(err);
       }
     }
   };
 
-  const deleteEntry = async(e, id)=>{
-    e.preventDefault()
-    setDeleteJournal(null)
-    try{
-        await EntryAPI.deleteOne(id)
-    }catch(err){
-        console.log('not deleted')
-    }
-}
+//   const deleteEntry = async(e, id)=>{
+//     e.preventDefault()
+//     setDeleteJournal(null)
+//     try{
+//         await EntryAPI.deleteOne(id)
+//     }catch(err){
+//         console.log('not deleted')
+//     }
+// }
 
   return (
     <div className={styles.Wrapper}>
