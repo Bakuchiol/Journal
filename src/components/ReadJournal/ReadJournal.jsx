@@ -15,7 +15,7 @@ function ReadJournal() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/api/entry/entry/${id}`)
+      .get(`/api/entry/entry/${id}`)
       .then((res) => {
         setAllEntries(res.data);
         console.log(res.data)
