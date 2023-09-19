@@ -27,6 +27,9 @@ app.use('/api/entry', require('./routes/api/entry'))
 
 
 // catch all
+// app.get('/', (req,res) => {
+//   res.sendStatus(200)
+// })
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });

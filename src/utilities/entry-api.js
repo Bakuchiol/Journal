@@ -1,11 +1,11 @@
 import sendRequest from "./send-request";
 // import axios from "axios";
 const BASE_URL = '/api/entry';
-
+// read journal
 export function journal(id){
     return sendRequest(`${BASE_URL}/journal`, 'GET', id)
 }
-
+// new entry
 export function newEntry(entryData){
     return sendRequest(`${BASE_URL}/newEntry`, 'POST', entryData)
 }
